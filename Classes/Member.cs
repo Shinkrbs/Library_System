@@ -24,7 +24,7 @@ namespace Library_System.Classes
         public void Borrow(Book book)
         {
             if (book.isAvailable != Book_Status.AVAILABLE)
-                throw new BooknotAvailableException("The Book is not available for borrowing.", book);
+                throw new BooknotAvailableException($"{book.Title} is not available for borrowing.", book);
             else
             {
                 book.markasBorrowed();
@@ -45,7 +45,7 @@ namespace Library_System.Classes
                     return;
                 }
             }
-            throw new BooknotFoundException($"{book.Title} is not borrowed by this member.", book);
+            throw new BooknotFoundException($"{book.Title} is not borrowed by {this.Name}.", book);
         }
     }
 }

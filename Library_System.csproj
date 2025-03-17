@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Transaction.cs" />
+    <Compile Include="Enums\Book_Status.cs" />
+    <Compile Include="Exceptions\BooknotAvailableException.cs" />
+    <Compile Include="Exceptions\BooknotFoundException.cs" />
+    <Compile Include="Main_Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

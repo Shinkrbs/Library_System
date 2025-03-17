@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Library_System
 {
-    class Program
+    class Main_Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

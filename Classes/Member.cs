@@ -13,6 +13,7 @@ namespace Library_System.Classes
         public int Member_ID { get; private set; }
         public string Name { get; private set; }
         public List<Book> Borrowed_Books;
+        private int BorrowingLimit = 10;
 
         public Member(int member_id, string name)
         {
@@ -23,6 +24,8 @@ namespace Library_System.Classes
 
         public void Borrow(Book book)
         {
+            if (this.Borrowed_Books.Count >= BorrowingLimit)
+                throw new MaxBooksReachedException("Borrowing limit reached, can't borrow anymore.");
             if (book.isAvailable != Book_Status.AVAILABLE)
                 throw new BooknotAvailableException($"{book.Title} is not available for borrowing.", book);
             else

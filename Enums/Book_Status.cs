@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Library_System.Enums
 {
-    class Book_Status
+    public enum Book_Status
     {
+        BORROWED,
+        RETURNED,
+        AVAILABLE,
+        NOT_AVAILABLE
     }
 }

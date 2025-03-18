@@ -8,7 +8,7 @@ namespace Library_System.Classes
 {
     public class Transaction
     {
-        public int TransactionID { get; private set; }
+        public string TransactionID { get; private set; }
         public Member MemberBorrower { get; private set; }
         public Book BookBorrowed { get; private set; }
         public DateTime BorrowDate { get; private set; }
@@ -17,7 +17,7 @@ namespace Library_System.Classes
         private const int fine_perday = 10;  // Adds Ten for every day (overdue)
         private const int daily_cost = 40;  // 40 per day borrowed
 
-        public Transaction(int transactionid, Member memberborrower, Book bookborrowed, DateTime borrowdate, DateTime returnDate)
+        public Transaction(string transactionid, Member memberborrower, Book bookborrowed, DateTime borrowdate, DateTime returnDate)
         {
             this.TransactionID = transactionid;
             this.MemberBorrower = memberborrower;
@@ -52,6 +52,26 @@ namespace Library_System.Classes
         public int GetTotalCost() 
         { 
             return this.TotalCost; 
+        }
+
+        public string GenerateReceipt()
+        {
+            StringBuilder receipt = new StringBuilder();
+            receipt.AppendLine("===== LIBRARY TRANSACTION RECEIPT =====");
+            receipt.AppendLine($"Transaction ID: {TransactionID}");
+            receipt.AppendLine($"Member: {MemberBorrower.Name}");
+            receipt.AppendLine($"Book Title: {BookBorrowed.Title}");
+            receipt.AppendLine($"Author: {BookBorrowed.Author}");
+            receipt.AppendLine($"Borrow Date: {BorrowDate:MMMM dd, yyyy}");
+            receipt.AppendLine($"Return Date: {ReturnDate:MMMM dd, yyyy}");
+
+            // Calculate overdue fine before printing total cost
+            CalculateFine();
+
+            receipt.AppendLine($"Total Cost: PHP {TotalCost}");
+            receipt.AppendLine("========================================");
+
+            return receipt.ToString();
         }
     }
 }

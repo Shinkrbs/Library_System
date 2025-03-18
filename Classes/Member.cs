@@ -25,7 +25,7 @@ namespace Library_System.Classes
         public void Borrow(Book book)
         {
             if (this.Borrowed_Books.Count >= BorrowingLimit)
-                throw new MaxBooksReachedException("Borrowing limit reached, can't borrow anymore.");
+                throw new MaxBooksReachedException("Borrowing limit reached, can't borrow anymore.", book);
             if (book.isAvailable != Book_Status.AVAILABLE)
                 throw new BooknotAvailableException($"{book.Title} is not available for borrowing.", book);
             else
@@ -40,7 +40,7 @@ namespace Library_System.Classes
         {
             for(int i = 0; i < this.Borrowed_Books.Count; i++)
             {
-                if (Borrowed_Books[i].Book_ID == book.Book_ID)
+                if (Borrowed_Books[i].Book_ID == book.Book_ID && book.isAvailable == Book_Status.BORROWED)
                 {
                     Borrowed_Books[i].markasReturned();
                     Borrowed_Books.RemoveAt(i);

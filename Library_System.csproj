@@ -44,16 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\Library.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Classes\Transaction.cs" />
     <Compile Include="Enums\Book_Status.cs" />
     <Compile Include="Exceptions\BooknotAvailableException.cs" />
     <Compile Include="Exceptions\BooknotFoundException.cs" />
+    <Compile Include="Exceptions\MaxBooksReachedException.cs" />
+    <Compile Include="Exceptions\MembernotFoundException.cs" />
     <Compile Include="Main_Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Library_System.Classes.Book">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAgAEAAgCAAAAAAAgAAAAABgAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Book.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="isAvailable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Library_System.Classes.Transaction">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAABAEAEAAXAAAAAAAgAAAAAAAhAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MemberBorrower" />
+      <Property Name="BookBorrowed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Library_System.Classes.Member">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAIAAAAEAAQAAAAAAAAAAAAAEAAAQAA=</HashCode>
+      <FileName>Classes\Member.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Borrowed_Books" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Library_System.Classes.Library">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAhgCBAAAAAAAEABAAAAA=</HashCode>
+      <FileName>Classes\Library.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Books" />
+      <Field Name="Members" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Library_System.Exceptions.BooknotAvailableException">
+    <Position X="1" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BooknotAvailableException.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Book_Borrowed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Library_System.Exceptions.BooknotFoundException">
+    <Position X="1" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\BooknotFoundException.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Borrowed_Book" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Library_System.Exceptions.MaxBooksReachedException">
+    <Position X="1" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MaxBooksReachedException.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BookBorrowed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Library_System.Exceptions.MembernotFoundException">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MembernotFoundException.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ToFindMember" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="Library_System.Enums.Book_Status">
+    <Position X="3.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAACAAAAAAAACAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Enums\Book_Status.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
